@@ -40,7 +40,29 @@ clock = pygame.time.Clock()
 
 
 # Тут опишите все классы игры.
-...
+class GameObject:
+    """
+    Базовый класс, от которого наследуется все объекты.
+    Содержит общие атрибуты: позиции и цвет.
+    """
+
+    def __init__(self, position=None, body_color=None):
+        """
+        Конструкция базового игрового поля.
+        Аргументы: position (координаты), body_color (цвет).
+        """
+
+        if position is None:
+            self.position = (320, 240)
+        else:
+            self.position = position
+
+    def draw(self, surface):
+        """
+        Абстрактный метод для отрисовки объекта на экран.
+        Аргументы: surface (поверхность, на которой рисуют).
+        """
+        pass
 
 
 def main():
