@@ -92,6 +92,7 @@ class Apple(GameObject):
         pygame.draw.rect(screen, self.body_color, rect)
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
+
 class Snake(GameObject):
     """
     Класс Snake. Наследуется от GameObject.
@@ -170,6 +171,7 @@ class Snake(GameObject):
         self.length = 1
         self.last = None
 
+
 def handle_keys(game_objiect):
     """Обрабатывает нажатие клавиш для изменения направления движения."""
     for event in pygame.event.get():
@@ -181,9 +183,9 @@ def handle_keys(game_objiect):
                 game_objiect.next_direction = UP
             elif event.key == pygame.K_DOWN and game_objiect.direction != UP:
                 game_objiect.next_direction = DOWN
-            elif event.key == pygame.K_LEFT and game_objiect.direction != RIGHT:
+            elif event.key== pygame.K_LEFT and game_objiect.direction != RIGHT:
                 game_objiect.next_direction = LEFT
-            elif event.key == pygame.K_RIGHT and game_objiect.direction != LEFT:
+            elif event.key== pygame.K_RIGHT and game_objiect.direction != LEFT:
                 game_objiect.next_direction = RIGHT
 
 
@@ -227,6 +229,7 @@ def main():
         apple.draw(screen)
         pygame.display.update()
 
+
 if __name__ == '__main__':
     main()
-
+    
