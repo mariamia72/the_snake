@@ -56,7 +56,7 @@ class GameObject:
             self.position = (320, 240)
         else:
             self.position = position
-        self.body_color = body_color
+            self.body_color = body_color
 
     def draw(self, surface):
         """
@@ -104,11 +104,13 @@ class Snake(GameObject):
     """
     def __init__(self):
         """
-        Инициализирует змейку зелёным цыетом,
-        длтной 1 и движнием вправо.
+        Инициализирует змейку зелёным цветом,
+        длиной 1 и движнием вправо.
         """
         super().__init__(body_color = SNAKE_COLOR)
         self.reset()
+        self.direction = RIGHT
+        self.next_direction = None
 
     def update_direction(self):
         """Объевлет направление движения змейки."""
